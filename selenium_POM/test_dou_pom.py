@@ -28,7 +28,6 @@ driver = webdriver.Chrome()
 
 def setup_module(module):
     driver.implicitly_wait(5)
-    driver.get('https://dou.ua/')
 
 
 def teardown_module(module):
