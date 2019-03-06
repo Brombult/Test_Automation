@@ -73,11 +73,11 @@ class SearchResultPage(BasePage):
         ).send_keys(search_string).send_keys(Keys.ENTER)
 
     def assert_result_found(self, search_string):
-        result = self.driver.find_element(self.SEARCH_RESULT_VALID)
+        result = self.driver.find_element(*self.SEARCH_RESULT_VALID)
         assert search_string.lower() in result.text.lower()
 
     def assert_no_result_found(self):
-        result = self.driver.find_element(self.SEARCH_RESULT_INVALID)
+        result = self.driver.find_element(*self.SEARCH_RESULT_INVALID)
         assert 'Результатов нет' in result.text
 
 
