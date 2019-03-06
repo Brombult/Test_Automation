@@ -67,8 +67,6 @@ class SearchResultPage(BasePage):
     SEARCH_RESULT_VALID = (By.CLASS_NAME, 'gs-title')
     SEARCH_RESULT_INVALID = (By.CLASS_NAME, 'gs-no-results-result')
 
-    def __init__(self, driver):
-        super().__init__(driver)
 
     def search_for(self, search_string):
         WebDriverWait(self.driver, 10).until(
