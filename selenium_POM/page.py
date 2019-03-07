@@ -48,7 +48,7 @@ class DouMainPage(BasePage):
 
     def go_to_salaries(self):
         self.driver.find_element(*self.SALARIES_LINK).click()
-        assert 'https://jobs.dou.ua/salaries/' ==  self.driver.current_url
+        assert 'https://jobs.dou.ua/salaries/' == self.driver.current_url
         return SalariesPage
 
     def go_to_jobs(self):
