@@ -1,3 +1,4 @@
+from urllib.parse import unquote
 from selenium import webdriver
 
 from page import (DouMainPage,
@@ -83,6 +84,7 @@ def test_jobs_category_and_city():
     job_page = JobsPage(driver)
     job_page.go_to_category(JOB_CATEGORY)
     job_page.go_to_city(JOB_CITY)
+    assert JOB_CATEGORY and JOB_CITY in unquote(driver.current_url)
 
 
 def test_calendar_archive():
