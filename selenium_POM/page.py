@@ -38,27 +38,27 @@ class DouMainPage(BasePage):
 
     def go_to_forum(self):
         self.driver.find_element(*self.FORUM_LINK).click()
-        assert 'https://dou.ua/forums/' in self.driver.current_url
+        assert 'https://dou.ua/forums/' == self.driver.current_url
         return ForumPage
 
     def go_to_feed(self):
         self.driver.find_element(*self.FEED_LINK).click()
-        assert 'https://dou.ua/lenta/' in self.driver.current_url
+        assert 'https://dou.ua/lenta/' == self.driver.current_url
         return FeedPage
 
     def go_to_salaries(self):
         self.driver.find_element(*self.SALARIES_LINK).click()
-        assert 'https://jobs.dou.ua/salaries/' in self.driver.current_url
+        assert 'https://jobs.dou.ua/salaries/' ==  self.driver.current_url
         return SalariesPage
 
     def go_to_jobs(self):
         self.driver.find_element(*self.JOBS_LINK).click()
-        assert 'https://jobs.dou.ua/' in self.driver.current_url
+        assert 'https://jobs.dou.ua/' == self.driver.current_url
         return JobsPage
 
     def go_to_calendar(self):
         self.driver.find_element(*self.CALENDAR_LINK).click()
-        assert 'https://dou.ua/calendar/' in self.driver.current_url
+        assert 'https://dou.ua/calendar/' == self.driver.current_url
         return CalendarPage
 
 
