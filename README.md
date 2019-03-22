@@ -9,5 +9,6 @@ selene_practice - example test suite using Selene library (https://github.com/ya
 seleniumbase_practice - example test using SeleniumBase library (https://github.com/seleniumbase/SeleniumBase)
 
 You can run test with Pytest:
-1. To run all tests, use "pytest" command in terminal
-2. To run one selected test use "pytest -k name_of_test" command in terminal
+1. cd to test directory
+2. To run all tests, use "pytest" command in terminal
+3. To run one selected test use 'pytest -k "name_of_test"' command in terminal
