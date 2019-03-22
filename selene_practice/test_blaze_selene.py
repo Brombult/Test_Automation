@@ -11,6 +11,11 @@ def test_blaze():
     Select(s(by.name('toPort'))).select_by_visible_text('Berlin')
     s('input[type="submit"]').click()
     s('.container>h3').should(have.text('Flights from Boston to Berlin:'))
+    s(by.xpath('//tbody/tr[last()]/td/input')).click()
+    s('.container > h2').should(have.text('Your flight from Boston to Berlin has been reserved.'))
+    s('.container > p').should(have.text('Airline: Lufthansa'))
+    s(by.xpath('//div[@class="container"]/p[last()-1]/em')).should(have.text('748.74'))  # Total price
+
 
 
 def test_blaze_with_explicit_driver():
