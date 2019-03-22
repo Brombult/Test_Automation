@@ -7,10 +7,8 @@ from selenium.webdriver.support.select import Select
 def test_blaze():
     config.browser_name = 'chrome'
     browser.open_url('http://www.blazedemo.com/')
-    s(by.name('fromPort')).click()
-    s(by.text('Boston')).click()
-    s(by.name('toPort')).click()
-    s(by.text('Berlin')).click()
+    Select(s(by.name('fromPort'))).select_by_visible_text('Boston')
+    Select(s(by.name('toPort'))).select_by_visible_text('Berlin')
     s('input[type="submit"]').click()
     s('.container>h3').should(have.text('Flights from Boston to Berlin:'))
 
