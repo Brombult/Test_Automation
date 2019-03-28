@@ -17,7 +17,6 @@ def test_blaze():
     s(by.xpath('//div[@class="container"]/p[last()-1]/em')).should(have.text('748.74'))  # Total price
 
 
-
 def test_blaze_with_explicit_driver():
     """Tried combining Selene and Selenium for better readability and usability"""
     driver = SeleneDriver.wrap(Chrome())
