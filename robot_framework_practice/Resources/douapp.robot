@@ -1,17 +1,23 @@
 *** Settings ***
-Library  SeleniumLibrary
-
+Documentation  Keyword file for Dou tests
+Resource  PO/main.robot
+Resource  PO/results.robot
 *** Variables ***
-${COMPANY_NAME}  dou
+
 
 *** Keywords ***
 Dou.Open Dou
-    go to  https://dou.ua/
+    Main.Load
 Dou.Search For A Company
-    press keys  id:txtGlobalSearch  ${COMPANY_NAME}  RETURN
+    [Arguments]  ${text}
+    Main.Type Text in Search  ${text}
+    Main.Press Submit in Search
 Dou.Search For Non-existent Company
-    press keys  id:txtGlobalSearch  ahsjhsahchjkxzcjh  RETURN
+    [Arguments]  ${text}
+    Main.Type Text in Search  ${text}
+    Main.Press Submit in Search
 Dou.Verify That Company Name Is In Search Results
-    element should contain  class:gs-title  ${COMPANY_NAME}  ignore_case=True
+    [Arguments]  ${text}
+    SearchResults.Verify Company Name Is Present  ${text}
 Dou.Verify That Nothing Is Found In Search Results
-    page should contain element  class:gs-no-results-result
+    SearchResults.Verify Nothing Is Found
