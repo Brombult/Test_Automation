@@ -8,6 +8,8 @@ selene_practice - example test suite using Selene library (https://github.com/ya
 
 seleniumbase_practice - example test using SeleniumBase library (https://github.com/seleniumbase/SeleniumBase)
 
+robot_framework_practice - example tests using Robot Framework. Has it's own README file
+
 You can run test with Pytest:
 1. cd to test directory
 2. To run all tests, use "pytest" command in terminal
