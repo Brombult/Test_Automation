@@ -3,7 +3,6 @@ Library  SeleniumLibrary
 
 *** Keywords ***
 Common.Begin Web Test
-    [Arguments]  ${browser}
-    open browser  about:blank  ${browser}
+    open browser  about:blank  ${BROWSER}
 Common.End Web Test
     close browser
