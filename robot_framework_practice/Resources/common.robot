@@ -2,7 +2,8 @@
 Library  SeleniumLibrary
 
 *** Keywords ***
-Common.Begin Web Test
-    open browser  about:blank  ${BROWSER}
-Common.End Web Test
+Begin Web Test
+    [Arguments]  ${browser}
+    open browser  about:blank  ${browser}
+End Web Test
     close browser

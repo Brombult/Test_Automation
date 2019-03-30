@@ -7,12 +7,12 @@ ${DOU_LINK} =           https://dou.ua/
 ${MAIN_SEARCH_BAR} =    id:txtGlobalSearch
 
 *** Keywords ***
-Main.Load
+Load
     go to  ${DOU_LINK}
-Main.Verify Page loaded
+Verify Page loaded
     page should contain link  ${DOU_LINK}
-Main.Type Text in Search
-    [Arguments]  ${text}
-    input text  ${MAIN_SEARCH_BAR}  ${text}
-Main.Press Submit in Search
+Type Text in Search
+    [Arguments]   ${company_name}
+    input text  ${MAIN_SEARCH_BAR}  ${company_name}
+Press Submit in Search
     press keys  ${MAIN_SEARCH_BAR}  RETURN
