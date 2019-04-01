@@ -2,8 +2,8 @@
 Documentation  Dou Smoke Test
 Resource  ../Resources/common.robot
 Resource  ../Resources/douapp.robot
-Test Setup  Begin Web Test  ${BROWSER}
-Test Teardown  End Web Test
+Suite Setup  Begin Web Test  ${BROWSER}
+Suite Teardown  End Web Test
 
 *** Variables ***
 ${BROWSER} =  chrome

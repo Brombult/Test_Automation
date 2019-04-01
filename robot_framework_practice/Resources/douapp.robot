@@ -4,6 +4,9 @@ Resource  PO/main.robot
 Resource  PO/results.robot
 Resource  PO/forum.robot
 
+*** Variables ***
+${FORUM_ADMIN_TELEGRAM} =   Telegram-канал для IT-спільноти Києва
+
 *** Keywords ***
 Open Dou
     Load Main Page
@@ -23,6 +26,6 @@ Verify That Nothing Is Found In Search Results
 Go to Forum
     Click on "Forum" link
 Choose "Site Administration" option in topic selector
-    Choose Topic By Value  https://dou.ua/forums/support/
+    Choose Topic By Index  1
 Verify that "Site Administarion" topic is chosen
-    page should contain  Telegram-канал для IT-спільноти Києва
+    page should contain  ${FORUM_ADMIN_TELEGRAM}
