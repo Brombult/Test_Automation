@@ -26,7 +26,7 @@ Search For Company that doesn't exists
 
 Forum's topic selector should work
     [Documentation]  Visit Dou, click on "Forum" link, choose first option in topic selector, verify that page changed
-    [Tags]  testing
+    [Tags]  Smoke
     Open Dou
     Go to Forum
     Choose "Site Administration" option in topic selector
