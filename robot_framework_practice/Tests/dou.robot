@@ -23,3 +23,11 @@ Search For Company that doesn't exists
     Open Dou
     Search For Non-existent Company
     Verify That Nothing Is Found In Search Results
+
+Forum's topic selector should work
+    [Documentation]  Visit Dou, click on "Forum" link, choose first option in topic selector, verify that page changed
+    [Tags]  testing
+    Open Dou
+    Go to Forum
+    Choose "Site Administration" option in topic selector
+    Verify that "Site Administarion" topic is chosen
