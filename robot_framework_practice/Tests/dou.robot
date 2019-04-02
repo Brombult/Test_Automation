@@ -8,6 +8,7 @@ Suite Teardown  End Web Test
 *** Variables ***
 ${BROWSER} =  chrome
 ${COMPANY} =  dou
+@{SPECIAL_PROJECTS_LIST} =  DOU Ревизор  DOU Проектор  DOU Labs  DOU Books
 
 *** Test Cases ***
 Search for company
@@ -24,10 +25,16 @@ Search For Company that doesn't exists
     Search For Non-existent Company
     Verify That Nothing Is Found In Search Results
 
-Forum's topic selector should work
+Forum's Topic Selector Should Work
     [Documentation]  Visit Dou, click on "Forum" link, choose first option in topic selector, verify that page changed
     [Tags]  Smoke
     Open Dou
     Go to Forum
     Choose "Site Administration" option in topic selector
     Verify that "Site Administarion" topic is chosen
+Varify Projects in Feed's Special Project Sections
+    [Documentation]  Visit Dou, click on "Feed" link, verify projects in "Special Projects" section
+    [Tags]  Smoke
+    Open Dou
+    Go to Feed
+    Verify list of special projects in Special Project section  @{SPECIAL_PROJECTS_LIST}

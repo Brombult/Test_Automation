@@ -18,3 +18,5 @@ Press Submit in Search
     press keys  ${MAIN_SEARCH_BAR}  RETURN
 Click on "Forum" link
     click link  ${FORUM_LINK}
+Click on "Feed" link
+    click link  ${FEED_LINK}

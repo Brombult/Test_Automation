@@ -3,6 +3,7 @@ Documentation  Keyword file for Dou tests
 Resource  PO/main.robot
 Resource  PO/results.robot
 Resource  PO/forum.robot
+Resource  PO/feed.robot
 
 *** Variables ***
 ${FORUM_ADMIN_TELEGRAM} =   Telegram-канал для IT-спільноти Києва
@@ -29,3 +30,8 @@ Choose "Site Administration" option in topic selector
     Choose Topic By Index  1
 Verify that "Site Administarion" topic is chosen
     page should contain  ${FORUM_ADMIN_TELEGRAM}
+Go to Feed
+    Load Feed Page
+Verify list of special projects in Special Project section
+    [Arguments]  @{projects_list}
+    Verify projects  @{projects_list}
