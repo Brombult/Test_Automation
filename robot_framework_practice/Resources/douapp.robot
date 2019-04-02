@@ -4,6 +4,7 @@ Resource  PO/main.robot
 Resource  PO/results.robot
 Resource  PO/forum.robot
 Resource  PO/feed.robot
+Resource  PO/salaries.robot
 
 *** Variables ***
 ${FORUM_ADMIN_TELEGRAM} =   Telegram-канал для IT-спільноти Києва
@@ -35,3 +36,14 @@ Go to Feed
 Verify list of special projects in Special Project section
     [Arguments]  @{projects_list}
     Verify projects  @{projects_list}
+Go to Salaries
+    Load Salaries Page
+Pick QA Job Title
+    [Arguments]  ${job_title}
+    Select Job Title By Text   ${job_title}
+Pick QA Specialization
+    [Arguments]  ${qa_spec}
+    Select Specialisation By Text  ${qa_spec}
+Verify Minimum Salary
+    [Arguments]  ${min_salary}
+    Verify Min Salary  ${min_salary}

@@ -9,6 +9,9 @@ Suite Teardown  End Web Test
 ${BROWSER} =  chrome
 ${COMPANY} =  dou
 @{SPECIAL_PROJECTS_LIST} =  DOU Ревизор  DOU Проектор  DOU Labs  DOU Books
+${JOB_TITLE} =  QA engineer
+${SPECIALIZATION} =  Automation QA
+${MIN_SALARY} =  1500
 
 *** Test Cases ***
 Search for company
@@ -39,3 +42,12 @@ Verify Projects in Feed's Special Project Sections
     Open Dou
     Go to Feed
     Verify list of special projects in Special Project section  @{SPECIAL_PROJECTS_LIST}
+
+Verify That Salaty Widged Is Working in "Salaries" tab
+    [Documentation]  Visit Dou, click on "Salaries" link, use salaries widget to display salary
+    [Tags]  Smoke
+    Open Dou
+    Go to Salaries
+    Pick QA Job Title  ${JOB_TITLE}
+    Pick QA Specialization  ${SPECIALIZATION}
+    Verify Minimum Salary  ${MIN_SALARY}
