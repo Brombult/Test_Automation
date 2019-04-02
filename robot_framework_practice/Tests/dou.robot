@@ -32,7 +32,8 @@ Forum's Topic Selector Should Work
     Go to Forum
     Choose "Site Administration" option in topic selector
     Verify that "Site Administarion" topic is chosen
-Varify Projects in Feed's Special Project Sections
+
+Verify Projects in Feed's Special Project Sections
     [Documentation]  Visit Dou, click on "Feed" link, verify projects in "Special Projects" section
     [Tags]  Smoke
     Open Dou
