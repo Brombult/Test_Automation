@@ -13,6 +13,8 @@ ${JOB_TITLE} =  QA engineer
 ${SPECIALIZATION} =  Automation QA
 ${MIN_SALARY} =  1500
 ${JOBS_CATEGORY} =  QA
+
+
 *** Test Cases ***
 Search for company
     [Documentation]  Visit Dou, then search company from main page, then verify that company is found
@@ -51,6 +53,7 @@ Verify That Salaty Widged Is Working in "Salaries" Page
     Pick QA Job Title  ${JOB_TITLE}
     Pick QA Specialization  ${SPECIALIZATION}
     Verify Minimum Salary  ${MIN_SALARY}
+
 Verify Verify That Job Category Selector Is Working
     [Documentation]  Visit Dou, click on "Jobs" link, open vacancies for job category using Category dropdown
     [Tags]  Smoke
