@@ -5,6 +5,7 @@ Resource  PO/results.robot
 Resource  PO/forum.robot
 Resource  PO/feed.robot
 Resource  PO/salaries.robot
+Resource  PO/jobs.robot
 
 *** Variables ***
 ${FORUM_ADMIN_TELEGRAM} =   Telegram-канал для IT-спільноти Києва
@@ -32,12 +33,12 @@ Choose "Site Administration" option in topic selector
 Verify that "Site Administarion" topic is chosen
     page should contain  ${FORUM_ADMIN_TELEGRAM}
 Go to Feed
-    Load Feed Page
+    Click on "Feed" link
 Verify list of special projects in Special Project section
     [Arguments]  @{projects_list}
     Verify projects  @{projects_list}
 Go to Salaries
-    Load Salaries Page
+    Click on "Salaries" Link
 Pick QA Job Title
     [Arguments]  ${job_title}
     Select Job Title By Text   ${job_title}
@@ -47,3 +48,11 @@ Pick QA Specialization
 Verify Minimum Salary
     [Arguments]  ${min_salary}
     Verify Min Salary  ${min_salary}
+Go to Jobs
+    Click On "Jobs" Link
+Select Job Category Via Dropdown
+    [Arguments]  ${category_name}
+    Select Job Category Via Dropdown By Text  ${category_name}
+Verify That Corresponding Job Category Is Open
+    [Arguments]  ${category_name}
+    Verify Chosen Job Category  ${category_name}

@@ -12,7 +12,7 @@ ${COMPANY} =  dou
 ${JOB_TITLE} =  QA engineer
 ${SPECIALIZATION} =  Automation QA
 ${MIN_SALARY} =  1500
-
+${JOBS_CATEGORY} =  QA
 *** Test Cases ***
 Search for company
     [Documentation]  Visit Dou, then search company from main page, then verify that company is found
@@ -43,7 +43,7 @@ Verify Projects in Feed's Special Project Sections
     Go to Feed
     Verify list of special projects in Special Project section  @{SPECIAL_PROJECTS_LIST}
 
-Verify That Salaty Widged Is Working in "Salaries" tab
+Verify That Salaty Widged Is Working in "Salaries" Page
     [Documentation]  Visit Dou, click on "Salaries" link, use salaries widget to display salary
     [Tags]  Smoke
     Open Dou
@@ -51,3 +51,10 @@ Verify That Salaty Widged Is Working in "Salaries" tab
     Pick QA Job Title  ${JOB_TITLE}
     Pick QA Specialization  ${SPECIALIZATION}
     Verify Minimum Salary  ${MIN_SALARY}
+Verify Verify That Job Category Selector Is Working
+    [Documentation]  Visit Dou, click on "Jobs" link, open vacancies for job category using Category dropdown
+    [Tags]  Smoke
+    Open Dou
+    Go to Jobs
+    Select Job Category Via Dropdown  ${JOBS_CATEGORY}
+    Verify That Corresponding Job Category Is Open  ${JOBS_CATEGORY}

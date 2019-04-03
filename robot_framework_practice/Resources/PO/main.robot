@@ -20,3 +20,7 @@ Click on "Forum" link
     click link  ${FORUM_LINK}
 Click on "Feed" link
     click link  ${FEED_LINK}
+Click on "Salaries" Link
+    click link  ${SALARIES_LINK}
+Click on "Jobs" Link
+    click link  ${JOBS_LINK}
