@@ -103,10 +103,3 @@ def test_post_login_without_password():
     r = requests.post(BASE_URL + 'login', data=post_data, timeout=2)
     assert r.status_code == 400
     assert 'Missing password' in r.text
-
-
-def test_get_timeout_expired():
-    try:
-        r = requests.get(BASE_URL + 'users/' + USER_ID, params='delay=5', timeout=2)
-    except requests.exceptions.Timeout:
-        return True

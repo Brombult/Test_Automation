@@ -10,6 +10,8 @@ seleniumbase_practice - example test using SeleniumBase library (https://github.
 
 robot_framework_practice - example tests using Robot Framework. Has it's own README file
 
+api_test = Example API test suite using Requests library and https://reqres.in/ 
+
 You can run test with Pytest:
 1. cd to test directory
 2. To run all tests, use "pytest" command in terminal
