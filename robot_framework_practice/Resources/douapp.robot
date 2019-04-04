@@ -6,9 +6,11 @@ Resource  PO/forum.robot
 Resource  PO/feed.robot
 Resource  PO/salaries.robot
 Resource  PO/jobs.robot
+Resource  PO/calendar.robot
 
 *** Variables ***
 ${FORUM_ADMIN_TELEGRAM} =   Telegram-канал для IT-спільноти Києва
+${CALENDAR_PAGE_HEADER} =  class:page-head
 
 *** Keywords ***
 Open Dou
@@ -56,3 +58,15 @@ Select Job Category Via Dropdown
 Verify That Corresponding Job Category Is Open
     [Arguments]  ${category_name}
     Verify Chosen Job Category  ${category_name}
+Go To Calendar
+    Click on "Calendar" link
+Choose A City For Events Using Dropdown
+    [Arguments]  ${city_name}
+    Select Sity By Text  ${city_name}
+Choose A Topic For Events Using Dropdown
+    [Arguments]  ${topic_name}
+    Select Topic By Text  ${topic_name}
+Verify That City And Topic Are Present In The Page Header
+    [Arguments]  ${city_name}  ${topic_name}
+    element should contain  ${CALENDAR_PAGE_HEADER}  ${city_name}  ignore_case=True
+    element should contain  ${CALENDAR_PAGE_HEADER}  ${topic_name}  ignore_case=True

@@ -24,3 +24,5 @@ Click on "Salaries" Link
     click link  ${SALARIES_LINK}
 Click on "Jobs" Link
     click link  ${JOBS_LINK}
+Click on "Calendar" link
+    click link  ${CALENDAR_LINK}

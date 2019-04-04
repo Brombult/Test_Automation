@@ -12,8 +12,9 @@ ${COMPANY} =  dou
 ${JOB_TITLE} =  QA engineer
 ${SPECIALIZATION} =  Automation QA
 ${MIN_SALARY} =  1500
-${JOBS_CATEGORY} =  QA
-
+${JOB_CATEGORY} =  QA
+${CALENDAR_CITY} =  Киев
+${CALENDAR_TOPIC} =  QA
 
 *** Test Cases ***
 Search for company
@@ -59,5 +60,14 @@ Verify Verify That Job Category Selector Is Working
     [Tags]  Smoke
     Open Dou
     Go to Jobs
-    Select Job Category Via Dropdown  ${JOBS_CATEGORY}
-    Verify That Corresponding Job Category Is Open  ${JOBS_CATEGORY}
+    Select Job Category Via Dropdown  ${JOB_CATEGORY}
+    Verify That Corresponding Job Category Is Open  ${JOB_CATEGORY}
+
+Verify That City And Topic Dropdowns Are Working On Calendar Page
+    [Documentation]  Visit Dou, click on "Jobs" link, display events for city and topic using dropdowns
+    [Tags]  Smoke
+    Open Dou
+    Go To Calendar
+    Choose A City For Events Using Dropdown  ${CALENDAR_CITY}
+    Choose A Topic For Events Using Dropdown  ${CALENDAR_TOPIC}
+    Verify That City And Topic Are Present In The Page Header  ${CALENDAR_CITY}  ${CALENDAR_TOPIC}
