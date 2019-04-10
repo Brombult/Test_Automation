@@ -1,3 +1,4 @@
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select, WebDriverWait
@@ -17,12 +18,11 @@ PROJECTS = ('DOU Ревизор', 'DOU Проектор', 'DOU Labs', 'DOU Books
 driver = webdriver.Chrome()
 
 
-def setup_module(module):
+@pytest.fixture(scope='module', autouse=True)
+def setup_and_teardown():
     driver.implicitly_wait(5)
     driver.get('https://dou.ua/')
-
-
-def teardown_module(module):
+    yield
     driver.quit()
 
 
@@ -53,7 +53,8 @@ def test_forum_topic_selector():
     driver.find_element(*MainPageLocators.FORUM_LINK).click()
     topic_select = Select(driver.find_element(*ForumLocators.FORUM_TOPIC_SELECTOR))
     topic_select.select_by_index(1)
-    assert 'Telegram-канал для IT-спільноти Києва' in driver.find_element(*ForumLocators.PINNED_TOPIC).text
+    assert 'Telegram-канал з корисною для початківців інформацією' in driver.find_element(
+        *ForumLocators.PINNED_TOPIC).text
 
 
 def test_feed_special_projects():
