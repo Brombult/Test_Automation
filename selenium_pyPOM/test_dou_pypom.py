@@ -1,21 +1,21 @@
 from selenium import webdriver
+import pytest
 
 from page import DouMainPage, SearchResultPage
-
-driver = webdriver.Chrome()
-
-
-def setup_module(module):
-    driver.implicitly_wait(5)
-
-
-def teardown_module(module):
-    driver.quit()
-
 
 base_url = 'https://dou.ua/'
 COMPANY_NAME = 'DOU'
 INVALID_NAME = '123efdvdfbgfdbfg'
+
+driver = webdriver.Chrome()
+
+
+@pytest.fixture(scope='module', autouse=True)
+def setup_and_teardown():
+    driver.implicitly_wait(5)
+    driver.get('https://dou.ua/')
+    yield
+    driver.quit()
 
 
 def test_search():
