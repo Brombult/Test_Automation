@@ -1,4 +1,5 @@
 from urllib.parse import unquote
+import pytest
 from selenium import webdriver
 
 from page import (DouMainPage,
@@ -27,11 +28,10 @@ CALENDAR_CITY = 'Киев'
 driver = webdriver.Chrome()
 
 
-def setup_module(module):
+@pytest.fixture(scope='module', autouse=True)
+def setup_and_teardown():
     driver.implicitly_wait(5)
-
-
-def teardown_module(module):
+    yield
     driver.quit()
 
 

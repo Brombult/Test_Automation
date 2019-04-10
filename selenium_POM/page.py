@@ -88,7 +88,7 @@ class ForumPage(BasePage):
     def check_topic_selector(self):
         topic_select = Select(self.driver.find_element(*self.FORUM_TOPIC_SELECTOR))
         topic_select.select_by_index(1)
-        assert 'Telegram-канал для IT-спільноти Києва' in self.driver.find_element(*self.PINNED_TOPIC).text
+        assert 'Telegram-канал з корисною для початківців інформацією' in self.driver.find_element(*self.PINNED_TOPIC).text
 
 
 class FeedPage(BasePage):
