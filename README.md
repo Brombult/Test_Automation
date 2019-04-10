@@ -16,3 +16,4 @@ You can run test with Pytest:
 1. cd to test directory
 2. To run all tests, use "pytest" command in terminal
 3. To run one selected test use 'pytest -k "name_of_test"' command in terminal
+4. You can run tests marked with "@pytest.mark.mark_name" using "pytest -m 'mark_name'"
