@@ -5,5 +5,6 @@ Library  SeleniumLibrary
 Begin Web Test
     [Arguments]  ${browser}
     open browser  about:blank  ${browser}
+
 End Web Test
     close browser
