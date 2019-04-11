@@ -8,7 +8,7 @@ NON_EXISTENT_USER_ID = '1232345'
 EMAIL = 'johndoe@company.com'
 PASSWORD = 'MyPassword'
 
-
+# TODO - add parametrization
 @pytest.mark.idempotent
 def test_get_user_list():
     page = 'page=1'
