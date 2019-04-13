@@ -29,5 +29,5 @@ Select Programmings Language By Text
 
 Verify Min Salary
     [Arguments]  ${min_salary}
-    wait until element contains  ${MIN_SALARY_SELECTOR}  ${min_salary}  2
+    wait until element contains  ${MIN_SALARY_SELECTOR}  ${min_salary}  5
     element text should be  ${MIN_SALARY_SELECTOR}  ${min_salary}
