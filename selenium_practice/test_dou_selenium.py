@@ -37,9 +37,9 @@ class TestDou:
     def test_invalid_search(self):
         """Searches for company that don't exists, that asserts that nothing was found"""
         if self.driver.current_url == f'https://dou.ua/search/?q={COMPANY_NAME.lower()}':  # these lines ensure that
-            search = self.driver.find_element(*MainPageLocators.CUSTOMER_SEARCH_FIELD)  # this test case can
-        else:  # be run both on it's own
-            search = self.driver.find_element(*MainPageLocators.SEARCH_FIELD)  # and bundled with other test cases
+            search = self.driver.find_element(*MainPageLocators.CUSTOMER_SEARCH_FIELD)     # this test case can be
+        else:                                                                              # run both on it's own and
+            search = self.driver.find_element(*MainPageLocators.SEARCH_FIELD)              # bundled with other tests
         search.clear()
         search.send_keys(INVALID_NAME)
         search.send_keys(Keys.ENTER)
